@@ -5,7 +5,7 @@
 <button class="btn play" type="button" (click)="play()">Play</button>
 <button class="btn pause" type="button" (click)="resetStart()">Re Start</button>
 
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+<agm-map [ngStyle]="{height: height+'px'}" [latitude]="lat" [longitude]="lng" [zoom]="12">
   <agm-marker 
     [iconUrl]="'assets/images/map-marker.png'" 
     [latitude]="lat" 
