@@ -45,7 +45,7 @@ export class MapComponent implements OnInit, OnDestroy {
   onResize(event) {
     this.height = event.target.innerHeight;
     this.width = event.target.innerWidth;
-    this.resetStart();
+    this.clear();
   }
 
   play() {
