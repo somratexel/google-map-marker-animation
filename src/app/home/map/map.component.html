@@ -1,9 +1,14 @@
 
 <a class="btn btn-lg btn-primary add-new" routerLink="../add-new" role="button">Add New »</a>
 
-<span [ngStyle]="{right: right+'px', bottom: bottom+'px', opacity: opacity }" class="post-marker"> <img src="assets/images/map-marker.png" alt=""></span>
-<button class="btn play" type="button" (click)="play()">Play</button>
-<button class="btn pause" type="button" (click)="resetStart()">Re Start</button>
+<span [ngStyle]="{right: right+'px', bottom: bottom+'px', opacity: opacity }" class="post-marker">
+  <img src="assets/images/map-marker.png" alt="">
+</span>
+
+<button class="btn play" type="button" (click)="play()">Play 1</button>
+<button class="btn play-2" type="button" (click)="play2()">Play 2</button>
+<button class="btn pause" type="button" (click)="resetStart()">Re Start 1</button>
+<button class="btn pause-2" type="button" (click)="resetStart2()">Re Start 2</button>
 
 <agm-map [ngStyle]="{height: height+'px'}" [latitude]="lat" [longitude]="lng" [zoom]="12">
   <agm-marker 

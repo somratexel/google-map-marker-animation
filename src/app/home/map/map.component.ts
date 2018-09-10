@@ -19,7 +19,8 @@ export class MapComponent implements OnInit, OnDestroy {
   markerHeight = 122;
   markerWidth = 44;
 
-  interval;
+  interval1;
+  interval2;
   right = -this.markerWidth / 2;
   bottom = 0;
   counter = 0;
@@ -39,7 +40,8 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    clearInterval(this.interval);
+    clearInterval(this.interval1);
+    clearInterval(this.interval2);
   }
 
   onResize(event) {
@@ -62,7 +64,7 @@ export class MapComponent implements OnInit, OnDestroy {
 
     const slope = (p1.x - p2.x) / (p1.y - p2.y);
 
-    this.interval = setInterval(e => {
+    this.interval1 = setInterval(e => {
 
       this.counter++;
       this.bottom++;
@@ -73,7 +75,33 @@ export class MapComponent implements OnInit, OnDestroy {
       if (this.counter > (this.height) / 2) {
         this.opacity = 0;
         this.markerOpacity = 1;
-        clearInterval(this.interval);
+        clearInterval(this.interval1);
+        // this.animation = 'BOUNCE';
+      }
+
+    }, 1);
+  }
+
+  play2() {
+    this.opacity = 1;
+
+    this.right = (this.width / 2) - (this.markerWidth / 2);
+
+    this.interval2 = setInterval(e => {
+
+
+      if (this.counter > (this.height / 2 ) / 2) {
+        this.counter = this.counter + 0.75;
+        this.bottom = this.bottom + 0.75;
+      } else {
+        this.counter++;
+        this.bottom++;
+      }
+
+      if (this.counter > (this.height) / 2) {
+        this.opacity = 0;
+        this.markerOpacity = 1;
+        clearInterval(this.interval2);
         // this.animation = 'BOUNCE';
       }
 
@@ -84,6 +112,11 @@ export class MapComponent implements OnInit, OnDestroy {
   resetStart() {
     this.clear();
     this.play();
+  }
+
+  resetStart2() {
+    this.clear();
+    this.play2();
   }
 
   clear() {

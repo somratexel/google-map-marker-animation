@@ -17,11 +17,27 @@
     z-index: 999;
 }
 
+.play-2 {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 75px;
+    z-index: 999;
+}
+
 .pause {
     cursor: pointer;
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 999;
+}
+
+.pause-2 {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 100px;
     z-index: 999;
 }
 
